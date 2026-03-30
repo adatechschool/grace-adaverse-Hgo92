@@ -1,4 +1,4 @@
-import { integer, pgTable, varchar, boolean, timestamp, text } from "drizzle-orm/pg-core";
+import { integer, pgTable, varchar, boolean, timestamp, text, date } from "drizzle-orm/pg-core";
 
 export const studentsProjects = pgTable("students_projects", {
     id: integer().primaryKey().generatedAlwaysAsIdentity(),
@@ -17,7 +17,7 @@ export const studentsProjects = pgTable("students_projects", {
 export const promos = pgTable("promos", {
     id: integer().primaryKey().generatedAlwaysAsIdentity(),
     name: varchar({ length: 50 }).notNull(),
-    startdate : timestamp().notNull()
+    startdate : date().notNull()
 
 });
 
