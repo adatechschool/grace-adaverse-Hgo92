@@ -9,6 +9,7 @@ export const studentsProjects = pgTable("students_projects", {
     img : text("img").notNull(),
     weblink: text("weblink").notNull(),
     github: text("github").notNull(),
+    demo : text("demo"),
     creationDate : timestamp("creation_date").notNull(),
     valid : boolean("valid").notNull(),
     publicationDate : timestamp("publication_date")
