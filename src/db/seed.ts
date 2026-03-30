@@ -1,4 +1,5 @@
 import { db } from "../index";
+import 'dotenv/config';
 import { promos, adaProjects } from "./schema";
 
 async function main() {
@@ -52,3 +53,4 @@ async function main() {
 
 }
 
+main()
