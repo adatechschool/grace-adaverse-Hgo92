@@ -1,5 +1,5 @@
 import { db } from "../index";
-import { promos } from "./schema";
+import { promos, adaProjects } from "./schema";
 
 async function main() {
   const promo: typeof promos.$inferInsert[] = [{
@@ -16,4 +16,36 @@ async function main() {
 ];
 
   await db.insert(promos).values(promo);
-  console.log('Les promos ont été créées') }
+  console.log('Les promos ont été créées'); 
+
+    const projectada: typeof adaProjects.$inferInsert[] = [
+        {
+            name : 'Adaquiz'
+        }, 
+        {
+            name : 'Adabilan'
+        },
+        {
+            name : 'Adapage'
+        }, 
+        {
+            name : 'Adashboard'
+        }, 
+        {
+            name : 'Adataviz'
+        },
+        {
+            name : 'Adatabase'
+        }, 
+        {
+            name : 'Adapi'
+        }, 
+        {
+            name : 'Nextada'
+        }, 
+        {   name : 'Adaverse'
+        }
+    ]
+
+}
+
