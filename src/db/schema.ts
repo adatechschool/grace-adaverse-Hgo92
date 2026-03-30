@@ -15,13 +15,13 @@ export const studentsProjects = pgTable("students_projects", {
 });
 
 export const promos = pgTable("promos", {
-  id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  name: varchar({ length: 50 }).notNull(),
-  startdate : timestamp().notNull()
-  
+    id: integer().primaryKey().generatedAlwaysAsIdentity(),
+    name: varchar({ length: 50 }).notNull(),
+    startdate : timestamp().notNull()
+
 });
 
 export const adaProjects = pgTable("ada_projects", {
-  id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  name: varchar({ length: 50 }).notNull()
+    id: integer().primaryKey().generatedAlwaysAsIdentity(),
+    name: varchar({ length: 50 }).notNull()
 });
