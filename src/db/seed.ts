@@ -45,7 +45,10 @@ async function main() {
         }, 
         {   name : 'Adaverse'
         }
-    ]
+    ];
+
+    await db.insert(adaProjects).values(projectada);
+    console.log('Les projets Ada ont été créés'); 
 
 }
 
