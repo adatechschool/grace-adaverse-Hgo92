@@ -2,6 +2,8 @@ import { db } from "../index";
 import 'dotenv/config';
 import { promos, adaProjects } from "./schema";
 
+
+
 async function main() {
   const promo: typeof promos.$inferInsert[] = [{
     name: 'Grace Hopper',
