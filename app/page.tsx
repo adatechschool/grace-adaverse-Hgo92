@@ -6,6 +6,7 @@ export  default async function Home() {
 
 const promosAda = await db.select().from(promos);
 const projectsAda = await db.select().from(adaProjects);
+const studentsProjectsAda = await db.select().from(studentsProjects);
   
 return (
     <div>
