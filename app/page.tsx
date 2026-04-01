@@ -1,4 +1,4 @@
-import ButtonHome from "./components/ButtonHome";
+import ButtonHome from "./_components/ButtonHome";
 import { db } from "@/src";
 import { studentsProjects, promos, adaProjects } from "../src/db/schema";
 
