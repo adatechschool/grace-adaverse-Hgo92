@@ -1,0 +1,22 @@
+"use client";
+import { ProjectsProps } from "@/src/interface/interface";
+
+interface SelectProjectsProps {
+    projectsAda : ProjectsProps[];
+    projectId : number;
+    setProjectId : (id: number) => void
+}
+
+export default function SelectProjects({projectsAda, projectId, setProjectId} : SelectProjectsProps) {
+
+    return ( 
+    <select value={projectId} onChange={(e) => {setProjectId(parseInt(e.target.value))}}>
+            <option>Tous les projets</option>
+            {projectsAda.map((project) => {
+                return (
+                    <option key={project.id} value={project.id}>{project.name}</option>
+                )
+            })}
+            </select>
+)
+}
