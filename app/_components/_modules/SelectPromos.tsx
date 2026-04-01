@@ -11,7 +11,7 @@ export default function SelectPromos({promosAda, promoId, setPromoId} : SelectPr
 
     return ( 
     <select value={promoId} onChange={(e) => {setPromoId(parseInt(e.target.value))}}>
-            <option value="null">Toutes les promos</option>
+            <option value="tous">Toutes les promos</option>
             {promosAda.map((promo) => {
                 return (
                     <option key={promo.id} value={promo.id}>{promo.name}</option>

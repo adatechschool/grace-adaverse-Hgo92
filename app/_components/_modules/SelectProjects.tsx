@@ -11,7 +11,7 @@ export default function SelectProjects({projectsAda, projectId, setProjectId} : 
 
     return ( 
     <select value={projectId} onChange={(e) => {setProjectId(parseInt(e.target.value))}}>
-            <option>Tous les projets</option>
+            <option value="tous">Tous les projets</option>
             {projectsAda.map((project) => {
                 return (
                     <option key={project.id} value={project.id}>{project.name}</option>
