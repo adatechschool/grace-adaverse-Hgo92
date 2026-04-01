@@ -1,9 +1,10 @@
 "use client";
 import { ProjectsProps } from "@/src/interface/interface";
+import { SelectType } from "../ButtonHome";
 
 interface SelectProjectsProps {
     projectsAda : ProjectsProps[];
-    projectId : number;
+    projectId : SelectType;
     setProjectId : (id: number) => void
 }
 

@@ -1,9 +1,11 @@
 "use client";
 import { PromosProps } from "@/src/interface/interface";
 
+import { SelectType } from "../ButtonHome";
+
 interface SelectPromosProps {
     promosAda : PromosProps[];
-    promoId : number;
+    promoId : SelectType;
     setPromoId : (id: number) => void
 }
 
