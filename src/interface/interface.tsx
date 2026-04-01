@@ -27,5 +27,6 @@ export interface StudentProjectsProps {
     demo: string | null;
     creationDate: Date;
     valid: boolean;
-    publicationDate: Date | null;
+    publicationDate: Date;
 }
+

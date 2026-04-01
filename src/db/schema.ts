@@ -13,7 +13,7 @@ export const studentsProjects = pgTable("students_projects", {
     demo : text("demo"),
     creationDate : timestamp("creation_date").notNull().defaultNow(),
     valid : boolean("valid").notNull(),
-    publicationDate : timestamp("publication_date")
+    publicationDate : timestamp("publication_date").notNull().defaultNow()
 });
 
 export const promos = pgTable("promos", {
