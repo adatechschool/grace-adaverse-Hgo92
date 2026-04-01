@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, SetStateAction, Dispatch } from "react";
 import Link from "next/link";
 import { ProjectsProps,PromosProps } from "@/src/interface/interface";
 import SelectProjects from "./_modules/SelectProjects";
@@ -10,15 +10,11 @@ interface HomeProps {
     promosAda : PromosProps[]
 }
 
+export type SelectType = number | "tous";
 
 export default function ButtonHome({projectsAda, promosAda} : HomeProps) {
-    const [projectId, setProjectId] = useState(0);
-    const [promoId, setPromoId] = useState(0);
-
-    const handleClick = () => {
-        
-    }
-
+    const [projectId, setProjectId] = useState<SelectType>("tous");
+    const [promoId, setPromoId] = useState<SelectType>("tous");
 
     return (
         <div>
@@ -33,7 +29,7 @@ export default function ButtonHome({projectsAda, promosAda} : HomeProps) {
                 promosAda = {promosAda}
             />
             
-            <button>Voir</button>            
+            <Link href={`./projects?projectId=${projectId}&promoId=${promoId}`}>Voir</Link>            
         </div>
     )
 
