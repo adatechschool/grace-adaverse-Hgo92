@@ -30,7 +30,7 @@ export default function Navbar({projectsAda, promosAda} : NavProps ) {
                 setPromoId = {setPromoId}
                 promosAda = {promosAda}
             />
-            <Link href={`./projects?projectId=${projectId}&promoId=${promoId}`}>Voir</Link>
+            <Link href={`/projects?projectId=${projectId}&promoId=${promoId}`}>Voir</Link>
         </div>
         
     )
