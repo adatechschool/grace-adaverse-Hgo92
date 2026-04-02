@@ -1,5 +1,5 @@
 "use client";
-import { useState, SetStateAction, Dispatch } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { ProjectsProps,PromosProps } from "@/src/interface/interface";
 import SelectProjects from "./_modules/SelectProjects";

@@ -27,18 +27,21 @@ export default async function projects({ searchParams }: { searchParams: Promise
 
     return(
         <div>
-            <Navbar/>
+            <Navbar
+            projectsAda = {projectsAda}
+            promosAda={promosAda}/>
+            <div className="flex flex-col gap-6 m-8">
             {projectsAda
             .filter(project => projectId === "tous" || project.id === projectId)
             .map((project) => {
                 const filtreProjets = studentsProjectsAda.filter((sp) => sp.ada_project_id === project.id)
                 return (
-                    <div>
+                    <div className="flex flex-col">
                         <h2>{project.name}</h2>
-                        <div>
+                        <div className="flex flex-row gap-4">
                         {filtreProjets.map((studentProject) => {
                                  return (
-                                    <div key={studentProject.id}>
+                                    <div className="flex flex-col" key={studentProject.id}>
                                         <img src={studentProject.img} alt={studentProject.name}></img>
                                         <span>{promosAda.find(p => p.id === studentProject.promo_id)?.name}</span>
                                         <h3>{studentProject.name}</h3>
@@ -49,7 +52,7 @@ export default async function projects({ searchParams }: { searchParams: Promise
                         </div>
                     </div>
                 )
-            })}
+            })}</div>
         </div>
     )
 }
