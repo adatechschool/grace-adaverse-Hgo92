@@ -42,7 +42,8 @@ export default async function projects({ searchParams }: { searchParams: Promise
                         <div className="flex flex-row gap-4">
                         {filtreProjets.map((studentProject) => {
                                  return (
-                                    <div className="flex flex-col" key={studentProject.id}><a href={`./projects/${studentProject.id}`}>
+                                    <div className="flex flex-col" key={studentProject.id}>
+                                        <a href={`./projects/${studentProject.weblink}`}>
                                         <img src={studentProject.img} alt={studentProject.name}></img>
                                         <span>{promosAda.find(p => p.id === studentProject.promo_id)?.name}</span>
                                         <h3>{studentProject.name}</h3>

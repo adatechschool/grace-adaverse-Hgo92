@@ -5,11 +5,9 @@ import Navbar from '@/app/_components/Navbar';
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const {slug} = await params;
-    
-    const studentProjectId = parseInt(slug);
 
     const [project, promosAda, projectsAda] = await Promise.all([
-        db.select().from(studentsProjects).where(eq(studentsProjects.id, studentProjectId)),
+        db.select().from(studentsProjects).where(eq(studentsProjects.weblink, slug)),
         db.select().from(promos),
         db.select().from(adaProjects)
     ]);
