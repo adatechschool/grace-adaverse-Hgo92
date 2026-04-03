@@ -5,6 +5,7 @@ import SelectPromos from "./_modules/SelectPromos";
 import { useState } from "react";
 import { SelectType } from "./ButtonHome";
 import { ProjectsProps,PromosProps } from "@/src/interface/interface";
+import AddProjectForm from "./AddProjectForm";
 
 interface NavProps {
     projectsAda : ProjectsProps[];
@@ -20,6 +21,10 @@ export default function Navbar({projectsAda, promosAda} : NavProps ) {
     return (
         <div>
             <Link href="./">Adaverse</Link>
+            <AddProjectForm
+                adaProjects = {projectsAda}
+                promos = {promosAda}           
+            />
             <SelectProjects
                 projectId = {projectId}
                 setProjectId = {setProjectId}
