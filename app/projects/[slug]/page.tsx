@@ -30,6 +30,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <h3>{project[0].name}</h3>
             <span>{project[0].publicationDate.toDateString()}</span>
             <p>{project[0].description}</p>
+            {project[0].demo !=null ? (<div><a target="_blank" href={project[0].github}>GitHub</a>
+            <a target="_blank" href={project[0].demo}>Demo</a></div>) : (<a target="_blank" href={project[0].github}>GitHub</a>)
+            }
         </div>
     )
 }
