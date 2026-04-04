@@ -17,7 +17,7 @@ export default function ButtonHome({projectsAda, promosAda} : HomeProps) {
     const [promoId, setPromoId] = useState<SelectType>("tous");
 
     return (
-        <div>
+        <div className="flex flex-row gap-3">
             <SelectProjects 
                 projectId = {projectId}
                 setProjectId = {setProjectId}
