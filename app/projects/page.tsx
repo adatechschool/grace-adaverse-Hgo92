@@ -33,8 +33,8 @@ export default async function projects({ searchParams }: { searchParams: Promise
                 promosAda={promosAda}
             />
             
-            <main className="max-w-7xl mx-auto px-6 py-12">
-                <div className="flex flex-col gap-16">
+            <main className="max-w-7xl mx-auto px-4 py-8">
+                <div className="flex flex-col gap-6">
                 {projectsAda
                 .filter(project => projectId === "tous" || project.id === projectId)
                 .map((project) => {
@@ -43,13 +43,12 @@ export default async function projects({ searchParams }: { searchParams: Promise
                     if (filtreProjets.length === 0) return null; 
 
                     return (
-                        <section key={project.id} className="space-y-8">
+                        <section key={project.id} className="space-y-4">
                             <div className="flex items-center gap-4">
                                 <h2 className="text-3xl font-bold tracking-tight">{project.name}</h2>
-                                <div className="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {filtreProjets.map((studentProject) => {
                                     return (
                                         <div key={studentProject.id} className="group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300">

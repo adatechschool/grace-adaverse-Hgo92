@@ -36,7 +36,7 @@ export default function AddProjectForm({ promos, adaProjects} : FormProps) {
                                 required 
                                 name="description" 
                                 placeholder="Décrivez votre projet"
-                                className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all min-h-[120px] text-slate-900 dark:text-white"
+                                className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all min-h-30 text-slate-900 dark:text-white"
                             />
                             <input 
                                 required 
