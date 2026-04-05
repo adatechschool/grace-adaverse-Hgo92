@@ -38,7 +38,6 @@ export default async function addProject(formData : FormData) {
         ...validatedData.data,
         img: img,
         weblink: weblink,
-        valid: false
     });
     } else if (!validatedData.success) {
         console.log("ça a coincé à la validation")

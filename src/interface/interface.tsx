@@ -26,7 +26,6 @@ export interface StudentProjectsProps {
     github: string;
     demo: string | null;
     creationDate: Date;
-    valid: boolean;
     publicationDate: Date;
 }
 
