@@ -3,7 +3,7 @@ import Navbar from "../_components/Navbar";
 import { ProjectsProps, PromosProps, StudentProjectsProps } from "@/src/interface/interface";
 import { db } from "@/src";
 import { studentsProjects, promos, adaProjects } from "@/src/db/schema";
-import { eq, and } from "drizzle-orm";
+import { eq, and, isNotNull } from "drizzle-orm";
 
 function isNumber(prop : number | "tous") : prop is number {
     return typeof prop === "number"
@@ -24,7 +24,7 @@ export default async function projects({ searchParams }: { searchParams: Promise
     if (isNumber(projectId)) { filters.push(eq(studentsProjects.ada_project_id, projectId));} 
     if (isNumber(promoId)) { filters.push(eq(studentsProjects.promo_id, promoId))}
     
-    const studentsProjectsAda : StudentProjectsProps[] = await db.select().from(studentsProjects).where(and(...filters));
+    const studentsProjectsAda : StudentProjectsProps[] = await db.select().from(studentsProjects).where(and(...filters, isNotNull(studentsProjects.publicationDate)));
 
     return(
         <div className="min-h-screen bg-background">
