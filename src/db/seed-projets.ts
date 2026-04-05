@@ -14,7 +14,6 @@ async function main() {
             weblink: "grace-arbres",
             github: "https://github.com/egainon/Adataviz-emilie",
             demo : "",
-            valid : true,
             publicationDate : sql`now()` as unknown as Date
         },
                     {
@@ -26,7 +25,6 @@ async function main() {
             weblink:"grace-ghibliquiz",
             github: "https://github.com/gab-hono/Quiz-Ghibli",
             demo : "",
-            valid : true,
             publicationDate : sql`now()` as unknown as Date
         }, 
         {
@@ -38,7 +36,6 @@ async function main() {
             weblink:"grace-pokedex-gabriel",
             github: "https://github.com/gab-hono/Pokedex",
             demo : "",
-            valid : true,
             publicationDate : sql`now()` as unknown as Date
         }, 
                 {
@@ -50,7 +47,6 @@ async function main() {
             weblink:"grace-piscines",
             github: "https://github.com/gab-hono/PiscinesParis-Frontend",
             demo : "",
-            valid : true,
             publicationDate : sql`now()` as unknown as Date
         }, 
         {
@@ -62,7 +58,6 @@ async function main() {
             weblink:"grace-adapage-gabriel-emilie",
             github: "https://github.com/adatechschool/grace-adapage-gabriel-emilie",
             demo : "",
-            valid : true,
             publicationDate : sql`now()` as unknown as Date
         },
         {
@@ -74,7 +69,6 @@ async function main() {
             weblink:"grace-adatabase-emilie",
             github: "https://github.com/egainon/Adatabase-Em",
             demo : "",
-            valid : true,
             publicationDate : sql`now()` as unknown as Date
         }
     ];
@@ -89,7 +83,6 @@ async function main() {
     weblink: "eco-track-1",
     github: "https://github.com/example/eco-track",
     demo: "https://eco-track.vercel.app",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -101,7 +94,6 @@ async function main() {
     weblink: "cyber-safe",
     github: "https://github.com/example/cyber-safe",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -113,7 +105,6 @@ async function main() {
     weblink: "meteo-sommets",
     github: "https://github.com/example/meteo",
     demo: "https://meteo-sommets.fr",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -125,7 +116,6 @@ async function main() {
     weblink: "recipe-mixer",
     github: "https://github.com/example/recipes",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -137,7 +127,6 @@ async function main() {
     weblink: "arbres-paris",
     github: "https://github.com/egainon/Adataviz-emilie",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -149,7 +138,6 @@ async function main() {
     weblink: "adopt-pet",
     github: "https://github.com/example/adopt",
     demo: "https://adopt-a-pet.org",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -161,7 +149,6 @@ async function main() {
     weblink: "zen-timer",
     github: "https://github.com/example/zen",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -173,7 +160,6 @@ async function main() {
     weblink: "retro-games",
     github: "https://github.com/example/retro",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -185,7 +171,6 @@ async function main() {
     weblink: "art-gallery",
     github: "https://github.com/example/art",
     demo: "https://art-hub.fr",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -197,7 +182,6 @@ async function main() {
     weblink: "task-master",
     github: "https://github.com/example/tasks",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -209,7 +193,6 @@ async function main() {
     weblink: "vino-select",
     github: "https://github.com/example/wine",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -221,7 +204,6 @@ async function main() {
     weblink: "loca-bike",
     github: "https://github.com/example/bike",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -233,7 +215,6 @@ async function main() {
     weblink: "study-buddy",
     github: "https://github.com/example/study",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -245,7 +226,6 @@ async function main() {
     weblink: "garden-help",
     github: "https://github.com/example/garden",
     demo: "",
-    valid: true,
     publicationDate: new Date()
   },
   {
@@ -257,7 +237,6 @@ async function main() {
     weblink: "budget-wise",
     github: "https://github.com/example/budget",
     demo: "https://budgetwise.app",
-    valid: true,
     publicationDate: new Date()
   }
 ];
