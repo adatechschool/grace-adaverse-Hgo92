@@ -10,5 +10,6 @@ INSERT INTO "ada_projects" (name) VALUES
         ('Adaopte'),
         ('Adaction'),
         ('Ada Check Event'),
-        ('Adaverse');
+        ('Adaverse'),
+        ('Adadex');
         

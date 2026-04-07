@@ -10,7 +10,7 @@ const ProjectSchema = z.object({
     name: z.string().min(1),
     description : z.string().min(1),
     github: z.url(),
-    demo: z.url().optional(),
+    demo: z.url().optional().or(z.literal("").transform(() => undefined)),
 });
 
 export default async function addProject(formData : FormData) {
@@ -27,6 +27,7 @@ export default async function addProject(formData : FormData) {
     // Je transforme la date de mon form en objet pour la valider avec Zod
 
     const dataToValidate = Object.fromEntries(formData.entries());
+    console.log(dataToValidate);
     const validatedData = ProjectSchema.safeParse(dataToValidate);
 
     console.log(validatedData.data);

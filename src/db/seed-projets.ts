@@ -330,7 +330,7 @@ async function main() {
 ]
 
 await db.insert(studentsProjects).values(mockProjects);
-// await db.insert(studentsProjects).values(projet);
+await db.insert(studentsProjects).values(projet);
 }
 
 main()

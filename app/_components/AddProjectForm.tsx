@@ -72,6 +72,7 @@ export default function AddProjectForm({ promos, adaProjects} : FormProps) {
                             </div>
 
                             <button 
+                                onClick={() => setClicked(false)}
                                 type="submit"
                                 className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-xl shadow-lg shadow-indigo-500/30 transition-transform active:scale-95 mt-2"
                             >
