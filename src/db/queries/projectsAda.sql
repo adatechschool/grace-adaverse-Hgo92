@@ -7,5 +7,8 @@ INSERT INTO "ada_projects" (name) VALUES
         ('Adatabase'),
         ('Adapi'),
         ('Nextada'),
+        ('Adaopte'),
+        ('Adaction'),
+        ('Ada Check Event'),
         ('Adaverse');
         

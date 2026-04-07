@@ -18,7 +18,7 @@ return (
         </p>
       </div>
       
-      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800 w-full max-w-md">
+      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800 w-full max-w-min">
         <ButtonHome 
             projectsAda={projectsAda}
             promosAda={promosAda}

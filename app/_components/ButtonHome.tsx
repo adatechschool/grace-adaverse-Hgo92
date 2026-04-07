@@ -29,7 +29,7 @@ export default function ButtonHome({projectsAda, promosAda} : HomeProps) {
                 promosAda = {promosAda}
             />
             
-            <Link href={`./projects?projectId=${projectId}&promoId=${promoId}`}>Voir</Link>            
+            <Link className="p-2" href={`./projects?projectId=${projectId}&promoId=${promoId}`}>Voir</Link>            
         </div>
     )
 
