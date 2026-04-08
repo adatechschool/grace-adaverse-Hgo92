@@ -29,7 +29,7 @@ export default function ButtonHome({projectsAda, promosAda} : HomeProps) {
                 promosAda = {promosAda}
             />
             
-            <Link className="p-2" href={`./projects?projectId=${projectId}&promoId=${promoId}`}>Voir</Link>            
+            <Link className="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-[#e74c34]" href={`./projects?projectId=${projectId}&promoId=${promoId}`}>Voir</Link>            
         </div>
     )
 
