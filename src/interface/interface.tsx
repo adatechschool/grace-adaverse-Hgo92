@@ -26,6 +26,6 @@ export interface StudentProjectsProps {
     github: string;
     demo: string | null;
     creationDate: Date;
-    publicationDate: Date;
+    publicationDate: Date | null;
 }
 

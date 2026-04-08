@@ -26,6 +26,10 @@ export default async function projects({ searchParams }: { searchParams: Promise
     
     const studentsProjectsAda : StudentProjectsProps[] = await db.select().from(studentsProjects).where(and(...filters, isNotNull(studentsProjects.publicationDate)));
 
+    const filteredCategories = projectsAda.filter((project) => projectId === "tous" || project.id === projectId);
+    const hasResults = filteredCategories.some(project => studentsProjectsAda.some(sp => sp.ada_project_id === project.id));
+
+
     return(
         <div className="min-h-screen bg-background">
             <Navbar
@@ -35,12 +39,20 @@ export default async function projects({ searchParams }: { searchParams: Promise
             
             <main className="max-w-7xl mx-auto px-4 py-8">
                 <div className="flex flex-col gap-6">
-                {projectsAda
-                .filter(project => projectId === "tous" || project.id === projectId)
-                .map((project) => {
+                    {!hasResults ? (
+                    <div className="flex flex-col items-center justify-center py-20 text-center border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl">
+                        <span className="text-5xl mb-4">🔍</span>
+                        <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                            Aucun projet trouvé
+                        </h2>
+                        <p className="text-slate-500 dark:text-slate-400 mt-2">
+                            Il n'y a pas encore de projets publiés pour ces critères de recherche.
+                        </p>
+                    </div>
+                ) : (
+                    filteredCategories.map((project) => {
                     const filtreProjets = studentsProjectsAda.filter((sp) => sp.ada_project_id === project.id)
-                    
-                    if (filtreProjets.length === 0) return null; 
+                    if (filtreProjets.length === 0) return null;
 
                     return (
                         <section key={project.id} className="space-y-4">
@@ -67,7 +79,7 @@ export default async function projects({ searchParams }: { searchParams: Promise
                                                             {promosAda.find(p => p.id === studentProject.promo_id)?.name}
                                                         </span>
                                                         <span className="text-xs text-slate-500">
-                                                            {studentProject.publicationDate.toLocaleDateString()}
+                                                            {studentProject.publicationDate?.toLocaleDateString()}
                                                         </span>
                                                     </div>
                                                     
@@ -82,8 +94,9 @@ export default async function projects({ searchParams }: { searchParams: Promise
                                 })}
                             </div>
                         </section>
-                    )
-                })}
+                        );
+                    })
+                )}
                 </div>
             </main>
         </div>
