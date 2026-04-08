@@ -6,13 +6,18 @@ import { SelectType } from "../ButtonHome";
 interface SelectPromosProps {
     promosAda : PromosProps[];
     promoId : SelectType;
-    setPromoId : (id: number) => void
+    setPromoId : (id: SelectType) => void
 }
 
 export default function SelectPromos({promosAda, promoId, setPromoId} : SelectPromosProps) {
 
     return ( 
-    <select value={promoId} onChange={(e) => {setPromoId(parseInt(e.target.value))}}>
+    <select value={promoId} onChange={(e) => {
+        if (e.target.value==="tous") {
+            setPromoId("tous")}
+        else {
+            setPromoId(parseInt(e.target.value))
+        }}}>
             <option value="tous">Toutes les promos</option>
             {promosAda.map((promo) => {
                 return (
