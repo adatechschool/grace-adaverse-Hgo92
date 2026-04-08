@@ -1,17 +1,9 @@
 'use server'
 import { eq } from "drizzle-orm";
-import { db } from "..";
-import {  promos, adaProjects, studentsProjects } from "./schema";
-import * as z from "zod";
+import { db } from "../..";
+import {  promos, adaProjects, studentsProjects } from "../schema";
+import { ProjectSchema } from "./zod-schemas";
 
-const ProjectSchema = z.object({
-    promo_id: z.coerce.number(),
-    ada_project_id: z.coerce.number(),
-    name: z.string().min(1),
-    description : z.string().min(1),
-    github: z.url(),
-    demo: z.url().optional().or(z.literal("").transform(() => undefined)),
-});
 
 export default async function addProject(formData : FormData) {
 
@@ -29,7 +21,6 @@ export default async function addProject(formData : FormData) {
     const dataToValidate = Object.fromEntries(formData.entries());
     console.log(dataToValidate);
     const validatedData = ProjectSchema.safeParse(dataToValidate);
-
     console.log(validatedData.data);
     
 
