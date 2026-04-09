@@ -1,32 +1,31 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ProjectsProps,PromosProps } from "@/src/interface/interface";
-import SelectProjects from "./_modules/SelectProjects";
-import SelectPromos from "./_modules/SelectPromos";
+import { ProjectsProps,PromosProps, StudentProjectsProps } from "@/src/interface/interface";
+import SelectBonusTest from "./_modules/SelectBonusTest";
 
 interface HomeProps {
     projectsAda : ProjectsProps[];
-    promosAda : PromosProps[]
+    promosAda : PromosProps[];
+    studentsProjects : StudentProjectsProps[]
 }
 
 export type SelectType = number | "tous";
 
-export default function ButtonHome({projectsAda, promosAda} : HomeProps) {
+export default function ButtonHome({projectsAda, promosAda, studentsProjects} : HomeProps) {
     const [projectId, setProjectId] = useState<SelectType>("tous");
     const [promoId, setPromoId] = useState<SelectType>("tous");
 
     return (
         <div className="flex flex-row gap-3">
-            <SelectProjects 
+            <SelectBonusTest 
                 projectId = {projectId}
                 setProjectId = {setProjectId}
                 projectsAda = {projectsAda}
-                />
-            <SelectPromos
                 promoId = {promoId}
                 setPromoId = {setPromoId}
                 promosAda = {promosAda}
+                studentsProjects = {studentsProjects}
             />
             
             <Link className="px-4 py-2 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-[#e74c34]" href={`./projects?projectId=${projectId}&promoId=${promoId}`}>Voir</Link>            

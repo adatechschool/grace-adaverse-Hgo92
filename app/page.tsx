@@ -1,11 +1,23 @@
 import ButtonHome from "./_components/ButtonHome";
+import { eq } from "drizzle-orm";
 import { db } from "@/src";
-import { promos, adaProjects } from "../src/db/schema";
+import { promos, adaProjects, studentsProjects } from "../src/db/schema";
 
 export  default async function Home() {
 
+const studentsProjectsAda = await db.select().from(studentsProjects);
 const promosAda = await db.select().from(promos);
-const projectsAda = await db.select().from(adaProjects);
+const projectsAda = await db
+    .select({
+      id: adaProjects.id,
+      name: adaProjects.name,
+    })
+    .from(adaProjects)
+    .innerJoin(
+      studentsProjects, 
+      eq(adaProjects.id, studentsProjects.ada_project_id)
+    )
+    .groupBy(adaProjects.id);
 
 return (
     <main className="flex-1 flex flex-col items-center justify-center p-6 text-center space-y-8">
@@ -22,6 +34,7 @@ return (
         <ButtonHome 
             projectsAda={projectsAda}
             promosAda={promosAda}
+            studentsProjects = {studentsProjectsAda}
         />
       </div>
     </main>
