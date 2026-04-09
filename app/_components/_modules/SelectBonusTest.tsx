@@ -23,14 +23,7 @@ export default function SelectBonusTest({projectsAda, projectId, setProjectId, p
                 setProjectId(parseInt(e.target.value))
             }}}>
                 <option value="tous">Tous les projets</option>
-                {projectsAda
-                .filter((projet) => {
-                    if (promoId === "tous") return true;
-                    return studentsProjects.some(project => 
-                    project.ada_project_id === projet.id && 
-                    project.promo_id === promoId
-                    );})
-                .map((project) => {
+                {projectsAda.map((project) => {
                     return (
                         <option key={project.id} value={project.id}>{project.name}</option>
                     )
@@ -44,12 +37,6 @@ export default function SelectBonusTest({projectsAda, projectId, setProjectId, p
                 }}}>
                 <option value="tous">Toutes les promos</option>
                 {promosAda
-                .filter((promo) => {
-                    if (projectId === "tous") return true;
-                    return studentsProjects.some(project => 
-                    project.promo_id === promo.id && 
-                    project.ada_project_id === projectId
-                    );})
                 .map((promo) => {
                     return (
                         <option key={promo.id} value={promo.id}>{promo.name}</option>

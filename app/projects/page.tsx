@@ -19,7 +19,18 @@ export default async function projects({ searchParams }: { searchParams: Promise
     const filters = [];
 
     const promosAda : PromosProps[] = await db.select().from(promos);
-    const projectsAda : ProjectsProps[] = await db.select().from(adaProjects);
+    const projectsAda : ProjectsProps[] = await db
+    .select({
+      id: adaProjects.id,
+      name: adaProjects.name,
+    })
+    .from(adaProjects)
+    .innerJoin(
+      studentsProjects, 
+      eq(adaProjects.id, studentsProjects.ada_project_id)
+    )
+    .groupBy(adaProjects.id);
+    console.log(projectsAda);
 
     if (isNumber(projectId)) { filters.push(eq(studentsProjects.ada_project_id, projectId));} 
     if (isNumber(promoId)) { filters.push(eq(studentsProjects.promo_id, promoId))}
@@ -35,6 +46,7 @@ export default async function projects({ searchParams }: { searchParams: Promise
             <Navbar
                 projectsAda={projectsAda}
                 promosAda={promosAda}
+                studentsProjects = {studentsProjectsAda}
             />
             
             <main className="max-w-7xl mx-auto px-4 py-8">

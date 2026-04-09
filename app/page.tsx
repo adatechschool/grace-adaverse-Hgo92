@@ -1,11 +1,11 @@
 import ButtonHome from "./_components/ButtonHome";
-import { eq } from "drizzle-orm";
+import { eq, isNotNull } from "drizzle-orm";
 import { db } from "@/src";
 import { promos, adaProjects, studentsProjects } from "../src/db/schema";
 
 export  default async function Home() {
 
-const studentsProjectsAda = await db.select().from(studentsProjects);
+const studentsProjectsAda = await db.select().from(studentsProjects).where(isNotNull(studentsProjects.publicationDate));
 const promosAda = await db.select().from(promos);
 const projectsAda = await db
     .select({
