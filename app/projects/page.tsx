@@ -60,6 +60,7 @@ export default async function projects({ searchParams }: { searchParams: Promise
                         <p className="text-slate-500 dark:text-slate-400 mt-2">
                             Il n'y a pas encore de projets publiés pour ces critères de recherche.
                         </p>
+                        <Link className="bg-accent hover:bg-indigo-600 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors mt-4" href="/projects?projectId=tous&promoId=tous">Voir tous les projets</Link>
                     </div>
                 ) : (
                     filteredCategories.map((project) => {
