@@ -1,9 +1,9 @@
-// page.tsx
 import Navbar from "../_components/Navbar";
 import { ProjectsProps, PromosProps, StudentProjectsProps } from "@/src/interface/interface";
 import { db } from "@/src";
 import { studentsProjects, promos, adaProjects } from "@/src/db/schema";
 import { eq, and, isNotNull } from "drizzle-orm";
+import Link from "next/link";
 
 function isNumber(prop : number | "tous") : prop is number {
     return typeof prop === "number"
@@ -64,7 +64,7 @@ export default async function projects({ searchParams }: { searchParams: Promise
                                 {filtreProjets.map((studentProject) => {
                                     return (
                                         <div key={studentProject.id} className="group relative bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden hover:shadow-2xl hover:shadow-indigo-500/10 transition-all duration-300">
-                                            <a href={`./projects/${studentProject.weblink}`} className="block">
+                                            <Link href={`./projects/${studentProject.weblink}`} className="block">
                                                 <div className="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
                                                     <img 
                                                         src={studentProject.img} 
@@ -88,7 +88,7 @@ export default async function projects({ searchParams }: { searchParams: Promise
                                                     </h3>
                                                 
                                                 </div>
-                                            </a>
+                                            </Link>
                                         </div>
                                     )
                                 })}

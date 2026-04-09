@@ -48,7 +48,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                                     {promoName}
                                 </span>
                                 <span className="text-sm text-slate-400">
-                                    Publié le {project.publicationDate.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                                    Publié le {project.publicationDate?.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
                                 </span>
                             </div>
                             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
