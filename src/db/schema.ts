@@ -12,7 +12,8 @@ export const studentsProjects = pgTable("students_projects", {
     github: text("github").notNull(),
     demo : text("demo"),
     creationDate : timestamp("creation_date").notNull().defaultNow(),
-    publicationDate : timestamp("publication_date")
+    publicationDate : timestamp("publication_date"),
+    views : integer('views').notNull().default(0)
 });
 
 export const promos = pgTable("promos", {
