@@ -6,7 +6,8 @@ import Navbar from '@/app/_components/Navbar';
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
-    const [projectResult, promosAda, projectsAda] = await Promise.all([
+    const [studentsProjectsNav, projectResult, promosAda, projectsAda] = await Promise.all([
+        db.select().from(studentsProjects),
         db.select().from(studentsProjects).where(and(eq(studentsProjects.weblink, slug), isNotNull(studentsProjects.publicationDate))),
         db.select().from(promos),
         db.select().from(adaProjects)
@@ -25,7 +26,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
     return (
         <div className="min-h-screen bg-background">
-            <Navbar projectsAda={projectsAda} promosAda={promosAda} />
+            <Navbar projectsAda={projectsAda} promosAda={promosAda} studentsProjects = {studentsProjectsNav} />
 
             <main className="max-w-5xl mx-auto px-6 py-12">
 
