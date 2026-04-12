@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ProjectsProps, PromosProps } from "@/src/interface/interface";
-import addProject from "@/src/db/lib/actions";
+import {addProject} from "@/src/db/lib/actions";
 import { ProjectSchema } from "@/src/db/lib/zod-schemas";
 import * as z from "zod";
 

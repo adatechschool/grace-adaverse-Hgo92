@@ -1,11 +1,11 @@
 'use server'
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import { db } from "../..";
 import {  promos, adaProjects, studentsProjects } from "../schema";
 import { ProjectSchema } from "./zod-schemas";
 
 
-export default async function addProject(formData : FormData) {
+export async function addProject(formData : FormData) {
 
     // Je recupère des éléments de mon forme pour créer mes propriétés weblink et img correspondantes
     const projectId = await db.select({ name: adaProjects.name }).from(adaProjects).where(eq(adaProjects.id, Number(formData.get('ada_project_id'))));
@@ -34,7 +34,12 @@ export default async function addProject(formData : FormData) {
     } else if (!validatedData.success) {
         console.log("ça a coincé à la validation")
     }
+};
 
-
-
+export async function addView(weblink : string) {
+    await db.
+    update(studentsProjects).
+    set({views : sql`${studentsProjects.views} +1`})
+    .where(eq(studentsProjects.weblink, weblink))
 }
+

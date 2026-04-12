@@ -2,9 +2,13 @@ import { db } from '@/src';
 import { studentsProjects, promos, adaProjects } from '@/src/db/schema';
 import { eq, isNotNull, and } from 'drizzle-orm';
 import Navbar from '@/app/_components/Navbar';
+import { addView } from '@/src/db/lib/actions';
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
+    await addView(slug);
+
+    
 
     const [studentsProjectsNav, projectResult, promosAda, projectsAda] = await Promise.all([
         db.select().from(studentsProjects),
@@ -48,6 +52,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                                 <span className="px-3 py-1 text-xs font-bold uppercase tracking-widest bg-accent/10 text-accent rounded-lg">
                                     {promoName}
                                 </span>
+                                <span>{project.views} vues</span>
                                 <span className="text-sm text-slate-400">
                                     Publié le {project.publicationDate?.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
                                 </span>
