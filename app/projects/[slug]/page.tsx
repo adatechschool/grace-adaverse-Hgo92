@@ -37,7 +37,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
                     <div className="relative group">
                         <div className="absolute -inset-1 bg-linear-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                        <div className="relative aspect-square overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-900">
+                        <div className="relative aspect-square overflow-hidden rounded-2xl border border-slate-200    bg-slate-100   ">
                             <img 
                                 src={project.img} 
                                 alt={project.name} 
@@ -62,8 +62,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                             </h1>
                         </div>
 
-                        <div className="prose dark:prose-invert max-w-none">
-                            <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                        <div className="prose    max-w-none">
+                            <p className="text-lg text-slate-600    leading-relaxed">
                                 {project.description}
                             </p>
                         </div>
@@ -72,7 +72,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                             <a 
                                 target="_blank" 
                                 href={project.github}
-                                className="flex-1 min-w-35 text-center px-6 py-3 bg-slate-900 dark:bg-white dark:text-slate-900 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-slate-500/20 transition-all"
+                                className="flex-1 min-w-35 text-center px-6 py-3 bg-slate-900 slate-900 text-white rounded-xl font-bold hover:shadow-lg hover:shadow-slate-500/20 transition-all"
                             >
                                 Voir sur GitHub
                             </a>

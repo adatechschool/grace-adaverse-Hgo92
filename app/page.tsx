@@ -25,12 +25,12 @@ return (
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
           Bienvenue sur <span className="text-accent">Ada</span>verse
         </h1>
-        <p className="text-lg text-slate-500 dark:text-slate-400">
+        <p className="text-lg text-slate-500">
           Découvrez les projets des différentes promos d'Ada Tech School. 
         </p>
       </div>
       
-      <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-xl border border-slate-200 dark:border-slate-800 w-full max-w-min">
+      <div className="bg-white  p-8 rounded-3xl shadow-xl border border-slate-200  w-full max-w-min">
         <ButtonHome 
             projectsAda={projectsAda}
             promosAda={promosAda}

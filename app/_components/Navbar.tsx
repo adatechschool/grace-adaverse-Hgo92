@@ -19,7 +19,7 @@ export default function Navbar({projectsAda, promosAda, studentsProjects} : NavP
     const [promoId, setPromoId] = useState<SelectType>("tous");
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b border-slate-300 dark:border-slate-800 bg-background/80 backdrop-blur-md">
+        <nav className="sticky top-0 z-50 w-full border-b border-slate-300    bg-background/80 backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
                 <Link href="/" className="text-3xl font-bold bg-linear-to-r from-[#eb7365] to-[#e63e1f] bg-clip-text text-transparent">
                     Adaverse
