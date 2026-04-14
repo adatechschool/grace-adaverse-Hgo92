@@ -6,11 +6,44 @@ import { sql } from "drizzle-orm";
 async function main() {
     const projet : typeof studentsProjects.$inferInsert[] = [
         {
+            ada_project_id : 14,
+            promo_id : 1,
+            name: "AdaRealBook",
+            description : "AdaRealBook est une application web de consultation de partitions jazz façon Real Book. Réalisé par Patrice.",
+            img : "https://github.com/patphiletas/AdaRealBook/blob/main/thumbnail.png?raw=true",
+            weblink: "grace-filrouge-realbook",
+            github: "https://github.com/patphiletas/AdaRealBook",
+            demo : "https://real-book-patphiletas-projects.vercel.app/",
+            publicationDate : sql`now()` as unknown as Date
+        },
+        {
+            ada_project_id : 5,
+            promo_id : 1,
+            name: "Que faire à Paris ?",
+            description : "Votre guide pour trouver quoi faire à Paris ! Réalisé par Sam.",
+            img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDhSvsPo_gyNKqiT72SSEPGpJx5QrDdv0XA&s",
+            weblink: "grace-adataviz-paris",
+            github: "https://github.com/Sammyhein/ParisEvents",
+            demo : "https://paris-events-delta.vercel.app/",
+            publicationDate : sql`now()` as unknown as Date
+        }
+        ,{
+            ada_project_id : 3,
+            promo_id : 1,
+            name: "Wakfu - Goultard ",
+            description : "Une page dédiée ",
+            img : "https://github.com/Sammyhein/WakfuGoultard/blob/main/thumbnail.png?raw=true",
+            weblink: "grace-adapage-wakfu",
+            github: "https://github.com/Sammyhein/WakfuGoultard",
+            demo : "https://wakfu-goultard.vercel.app/",
+            publicationDate : sql`now()` as unknown as Date
+        },
+        {
             ada_project_id : 4,
             promo_id : 1,
             name: "Adashboard - Hugo M.",
             description : "Un dashboard pour afficher mes compétences et les faire évoluer au fil de ma formation.",
-            img : "https://github.com/adatechschool/grace-adashboard-Hgo92/blob/main/thumbnail.png",
+            img : "https://github.com/adatechschool/grace-adashboard-Hgo92/blob/main/thumbnail.png?raw=true",
             weblink: "grace-adashboard-hugo",
             github: "https://github.com/adatechschool/grace-adashboard-Hgo92",
             demo : "https://grace-adashboard-hgo92.vercel.app/",
@@ -21,7 +54,7 @@ async function main() {
             promo_id : 1,
             name: "Grace Hopper",
             description : "Un page réalisée en React pour découvrir la vie passionnante de Grace Hopper, pionnière de l'informatique qui a donné son nom à notre promotion.",
-            img : "https://github.com/Hgo92/adapage-zineb-hugo/blob/main/thumbnail.png",
+            img : "https://github.com/Hgo92/adapage-zineb-hugo/blob/main/thumbnail.png?raw=true",
             weblink: "grace-adapage-hopper",
             github: "https://github.com/Hgo92/adapage-zineb-hugo/tree/main",
             demo : "https://adapage-zineb-hugo.vercel.app/",
@@ -32,18 +65,18 @@ async function main() {
             promo_id : 1,
             name: "La Mémoire de Paris",
             description : "Pour ce projet de Dataviz, j'ai choisi les plaques commémoratives. A Paris, ce sont 2 575 plaques qui ornent murs et monuments. Découvrez-les ! Un projet réalisé par Hugo Monier.",
-            img : "https://github.com/Hgo92/grace-adataviz-hgo92/blob/main/thumbnail.png",
+            img : "https://github.com/Hgo92/grace-adataviz-hgo92/blob/main/thumbnail.png?raw=true",
             weblink: "grace-adataviz-memoire",
             github: "https://github.com/Hgo92/grace-adataviz-hgo92",
             demo : "https://grace-adataviz-hgo92.vercel.app/",
             publicationDate : sql`now()` as unknown as Date
         },
                 {
-            ada_project_id : 4,
+            ada_project_id : 14,
             promo_id : 1,
             name: "Learn With Me",
             description : "Un application de flashcards pour aider à l'apprentissage des langues ! Un projet réalisé par Hugo Monier.",
-            img : "https://github.com/Hgo92/learn-with-me-hgo92/blob/main/front/learn-with-me/thumbnail.png",
+            img : "https://github.com/Hgo92/learn-with-me-hgo92/blob/main/front/learn-with-me/thumbnail.png?raw=true",
             weblink: "grace-learnwithme-hugo",
             github: "https://github.com/Hgo92/learn-with-me-hgo92/tree/main",
             demo : "https://learn-with-me-hgo92.vercel.app/",

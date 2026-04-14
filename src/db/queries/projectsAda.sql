@@ -11,5 +11,6 @@ INSERT INTO "ada_projects" (name) VALUES
         ('Adaction'),
         ('Ada Check Event'),
         ('Adaverse'),
-        ('Adadex');
+        ('Adadex'),
+        ('Projet Fil Rouge');
         
