@@ -10,8 +10,9 @@ export async function addProject(formData : FormData) {
     // Je recupère des éléments de mon forme pour créer mes propriétés weblink et img correspondantes
     const projectId = await db.select({ name: adaProjects.name }).from(adaProjects).where(eq(adaProjects.id, Number(formData.get('ada_project_id'))));
     const promoId = await db.select({name : promos.name}).from(promos).where(eq(promos.id, Number(formData.get('promo_id'))));
+    const nameCut = (formData.get('name') as string).trim().split(' ')[0];
     const promoIdCut = promoId[0].name.split(" ")
-    const weblink = (promoIdCut[0] + "-" + projectId[0].name + "-" + formData.get('name')).toLowerCase();
+    const weblink = (promoIdCut[0] + "-" + projectId[0].name + "-" + nameCut).toLowerCase();
     console.log(weblink)
     const img = formData.get('github') + "/blob/main/thumbnail.png?raw=true";
     console.log(img)
