@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ProjectsProps, PromosProps } from "@/src/interface/interface";
-import addProject from "@/src/db/lib/actions";
+import {addProject} from "@/src/db/lib/actions";
 import { ProjectSchema } from "@/src/db/lib/zod-schemas";
 import * as z from "zod";
 
@@ -48,16 +48,16 @@ export default function AddProjectForm({ promos, adaProjects} : FormProps) {
         <div>
             {clicked ? (
                 <div className="fixed inset-0 z-100 w-screen h-screen bg-black/60 backdrop-blur-sm overflow-y-auto flex justify-center items-start pt-4 sm:pt-20">
-                    <div className="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-2xl w-full max-w-lg shadow-2xl mx-4 mb-10">
+                    <div className="relative bg-white border border-slate-200 p-6 sm:p-8 rounded-2xl w-full max-w-lg shadow-2xl mx-4 mb-10">
                         {isSuccess ? (
               <div className="flex flex-col items-center justify-center py-12 text-center">
-                <div className="bg-green-100 dark:bg-green-900/30 p-4 rounded-full mb-4">
+                <div className="bg-green-100 p-4 rounded-full mb-4">
                   <span className="text-4xl">✅</span>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">
                   Projet envoyé !
                 </h3>
-                <p className="text-slate-500 dark:text-slate-400">
+                <p className="text-slate-500">
                   Merci pour votre contribution. Votre projet a été ajouté avec succès.
                 </p>
               </div>
@@ -65,19 +65,19 @@ export default function AddProjectForm({ promos, adaProjects} : FormProps) {
                 <>
                         <button 
                             onClick={() => setClicked(false)}
-                            className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white p-2 transition-colors"
+                            className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-2 transition-colors"
                         >
                             ✕
                         </button>
 
-                        <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Proposer un projet</h2>
+                        <h2 className="text-2xl font-bold mb-6 text-slate-900">Proposer un projet</h2>
 
                         <form onSubmit={handleSubmit(processForm)} className="flex flex-col gap-5">
                             <div>
                                 <input
                                 {...register("name")}
                                 placeholder="Le titre de votre projet"
-                                className={`w-full bg-slate-50 dark:bg-slate-800/50 border ${errors.name ? 'border-red-500' : 'border-slate-200 dark:border-slate-700'} rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900 dark:text-white`}
+                                className={`w-full bg-slate-50 border ${errors.name ? 'border-red-500' : 'border-slate-200'} rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900 `}
                                 />
                                 {errors.name && <p className="text-red-500 text-xs mt-1 ml-1">{errors.name.message}</p>}
                             </div>
@@ -86,7 +86,7 @@ export default function AddProjectForm({ promos, adaProjects} : FormProps) {
                                 <textarea
                                 {...register("description")}
                                 placeholder="Décrivez votre projet"
-                                className={`w-full bg-slate-50 dark:bg-slate-800/50 border ${errors.description ? 'border-red-500' : 'border-slate-200 dark:border-slate-700'} rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all min-h-30 text-slate-900 dark:text-white`}
+                                className={`w-full bg-slate-50 border ${errors.description ? 'border-red-500' : 'border-slate-200'} rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all min-h-30 text-slate-900`}
                                 />
                                 {errors.description && <p className="text-red-500 text-xs mt-1 ml-1">{errors.description.message}</p>}
                             </div>
@@ -95,7 +95,7 @@ export default function AddProjectForm({ promos, adaProjects} : FormProps) {
                                 <input
                                 {...register("github")}
                                 placeholder="Votre URL github"
-                                className={`w-full bg-slate-50 dark:bg-slate-800/50 border ${errors.github ? 'border-red-500' : 'border-slate-200 dark:border-slate-700'} rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900 dark:text-white`}
+                                className={`w-full bg-slate-50 border ${errors.github ? 'border-red-500' : 'border-slate-200'} rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900`}
                                 />
                                 {errors.github && <p className="text-red-500 text-xs mt-1 ml-1">{errors.github.message}</p>}
                             </div>
@@ -104,7 +104,7 @@ export default function AddProjectForm({ promos, adaProjects} : FormProps) {
                                 <input
                                 {...register("demo")}
                                 placeholder="L'URL de votre demo (optionnel)"
-                                className={`w-full bg-slate-50 dark:bg-slate-800/50 border ${errors.demo ? 'border-red-500' : 'border-slate-200 dark:border-slate-700'} rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900 dark:text-white`}
+                                className={`w-full bg-slate-50 ${errors.demo ? 'border-red-500' : 'border-slate-200 '} rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900`}
                                 />
                                 {errors.demo && <p className="text-red-500 text-xs mt-1 ml-1">{errors.demo.message}</p>}
                             </div>
@@ -113,7 +113,7 @@ export default function AddProjectForm({ promos, adaProjects} : FormProps) {
                                 <div>
                                 <select
                                     {...register("promo_id")}
-                                    className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900 dark:text-white"
+                                    className="w-full bg-slate-50    border border-slate-200   rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900   "
                                 >
                                     {promos.map((promo) => (
                                     <option key={promo.id} value={promo.id}>
@@ -125,7 +125,7 @@ export default function AddProjectForm({ promos, adaProjects} : FormProps) {
                                 <div>
                                 <select
                                     {...register("ada_project_id")}
-                                    className="w-full bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900 dark:text-white"
+                                    className="w-full bg-slate-50    border border-slate-200   rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 transition-all text-slate-900   "
                                 >
                                     {adaProjects.map((project) => (
                                     <option key={project.id} value={project.id}>

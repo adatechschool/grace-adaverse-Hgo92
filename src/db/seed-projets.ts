@@ -6,6 +6,39 @@ import { sql } from "drizzle-orm";
 async function main() {
     const projet : typeof studentsProjects.$inferInsert[] = [
         {
+            ada_project_id : 14,
+            promo_id : 1,
+            name: "AdaRealBook",
+            description : "AdaRealBook est une application web de consultation de partitions jazz façon Real Book. Réalisé par Patrice.",
+            img : "https://github.com/patphiletas/AdaRealBook/blob/main/thumbnail.png?raw=true",
+            weblink: "grace-filrouge-realbook",
+            github: "https://github.com/patphiletas/AdaRealBook",
+            demo : "https://real-book-patphiletas-projects.vercel.app/",
+            publicationDate : sql`now()` as unknown as Date
+        },
+        {
+            ada_project_id : 5,
+            promo_id : 1,
+            name: "Que faire à Paris ?",
+            description : "Votre guide pour trouver quoi faire à Paris ! Réalisé par Sam.",
+            img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlDhSvsPo_gyNKqiT72SSEPGpJx5QrDdv0XA&s",
+            weblink: "grace-adataviz-paris",
+            github: "https://github.com/Sammyhein/ParisEvents",
+            demo : "https://paris-events-delta.vercel.app/",
+            publicationDate : sql`now()` as unknown as Date
+        }
+        ,{
+            ada_project_id : 3,
+            promo_id : 1,
+            name: "Wakfu - Goultard ",
+            description : "Une page dédiée ",
+            img : "https://github.com/Sammyhein/WakfuGoultard/blob/main/thumbnail.png?raw=true",
+            weblink: "grace-adapage-wakfu",
+            github: "https://github.com/Sammyhein/WakfuGoultard",
+            demo : "https://wakfu-goultard.vercel.app/",
+            publicationDate : sql`now()` as unknown as Date
+        },
+        {
             ada_project_id : 4,
             promo_id : 1,
             name: "Adashboard - Hugo M.",
@@ -39,7 +72,7 @@ async function main() {
             publicationDate : sql`now()` as unknown as Date
         },
                 {
-            ada_project_id : 4,
+            ada_project_id : 14,
             promo_id : 1,
             name: "Learn With Me",
             description : "Un application de flashcards pour aider à l'apprentissage des langues ! Un projet réalisé par Hugo Monier.",
